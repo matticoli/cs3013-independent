@@ -1,4 +1,9 @@
-/* doit.c */
+/* doit.c 
+ * 
+ *
+ */
+
+//TODO: Monitor async subprocess, jobs command, don't exit if blocked, features/lims
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,12 +15,12 @@
 
 char *shellPrompt = "-->";
 
-int forkme(char **argv);
+int forkme(char **argv, int async);
 
 
 int main(int argc, char **argv) {
     if(argc > 1) { 
-        return forkme(argv + 1);
+        return forkme(argv + 1, 0);
     } else {
         // No args, run doit shell
         char *input;
@@ -74,14 +79,19 @@ int main(int argc, char **argv) {
                 shellPrompt = argvIn[3];
             }
 
-            forkme(argvIn);
+            if(strcmp(argvIn[argNum - 1], "&") == 0) {
+                argvIn[argNum - 1] = NULL;
+                forkme(argvIn, 1);
+            } else {
+                forkme(argvIn, 0);
+            }
         }
 
     }
     return 0;
 }
 
-int forkme(char **argv) {
+int forkme(char **argv, int async) {
     int pid;// get pid of subprocess
 
     // Get start time just before fork
@@ -101,7 +111,11 @@ int forkme(char **argv) {
     } else {
         
         /* parent process */
-        wait(0);     /* wait for the child to finish */
+        if(!async) {
+            wait(0);     /* wait for the child to finish */
+        } else {
+            printf("[1] %d\n", pid);
+        }
 
         // Get end time
         struct timeval *end = malloc(sizeof(struct timeval));
@@ -119,7 +133,7 @@ int forkme(char **argv) {
         long ucpu = (((usage->ru_utime).tv_sec*1000) + ((usage->ru_utime).tv_usec/1000));
         long scpu = (((usage->ru_stime).tv_sec*1000) + ((usage->ru_stime).tv_usec/1000));
 
-        printf("======== PROCESS STATS ========\n");
+        printf("======== SUBPROCESS STATS ========\n");
         printf("User CPU TIME:            %ldms\n", ucpu);
         printf("Sys CPU TIME:             %ldms\n", scpu);
         printf("Wall Clock Time:          %dms\n", runtime);
