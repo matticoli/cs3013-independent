@@ -1,118 +1,143 @@
-Script started on Fri 31 Aug 2018 09:34:34 AM EDT
-bash-3.2$ ./doit sleep 5
-======== PROCESS STATS ========
+Script started on Fri 31 Aug 2018 11:46:27 AM EDT
+bash-3.2$ ls
+doit  doit.c  testLog.txt
+bash-3.2$ ./doit
+-->exit
+Exit: doit shell will now terminate
+
+bash-3.2$ ./doit wc doit.c
+ 208  737 7077 doit.c
+======== PID 20681 STATS (wc) ========
 User CPU TIME:            0ms
 Sys CPU TIME:             0ms
-Wall Clock Time:          5001ms
+Wall Clock Time:          2ms
+Involuntary Preemptions:  1
+Voluntary CPU Loss:       4
+Major Page Faults:        0
+Minor Page Faults:        180
+Max Resident Set Size:    552
+bash-3.2$ ./doit sleep 1
+======== PID 28410 STATS (sleep) ========
+User CPU TIME:            0ms
+Sys CPU TIME:             0ms
+Wall Clock Time:          1003ms
+Involuntary Preemptions:  0
+Voluntary CPU Loss:       2
+Major Page Faults:        0
+Minor Page Faults:        176
+Max Resident Set Size:    536
+bash-3.2$ ./doit
+-->cd
+Current dir: /isihome/mamatticoli/My_Documents/CS3013/HW1
+-->cd ..
+Current dir: /isihome/mamatticoli/My_Documents/CS3013
+-->ls
+HW1  README.md
+======== PID 1141 STATS (ls) ========
+User CPU TIME:            0ms
+Sys CPU TIME:             0ms
+Wall Clock Time:          2ms
+Involuntary Preemptions:  2
+Voluntary CPU Loss:       2
+Major Page Faults:        0
+Minor Page Faults:        271
+Max Resident Set Size:    860
+-->cd HW1
+Current dir: /isihome/mamatticoli/My_Documents/CS3013/HW1
+-->ls
+doit  doit.c  testLog.txt
+======== PID 14429 STATS (ls) ========
+User CPU TIME:            0ms
+Sys CPU TIME:             0ms
+Wall Clock Time:          2ms
+Involuntary Preemptions:  3
+Voluntary CPU Loss:       4
+Major Page Faults:        0
+Minor Page Faults:        542
+Max Resident Set Size:    860
+-->jobs
+No active jobs.
+-->set prompt = =>
+=>
+No command entered
+=>sleep 5 &
+[1] 8272
+=>jobs
+Active Jobs:
+[1] 8272 sleep
+=>sleep 3 &
+[2] 6802
+=>jobs
+Active Jobs:
+[1] 8272 sleep
+[2] 6802 sleep
+=>sleep 0
+======== PID 8272 STATS (sleep) ========
+User CPU TIME:            0ms
+Sys CPU TIME:             0ms
+Wall Clock Time:          0ms
+Involuntary Preemptions:  3
+Voluntary CPU Loss:       6
+Major Page Faults:        0
+Minor Page Faults:        716
+Max Resident Set Size:    860
+======== PID 6802 STATS (sleep) ========
+User CPU TIME:            0ms
+Sys CPU TIME:             0ms
+Wall Clock Time:          0ms
+Involuntary Preemptions:  3
+Voluntary CPU Loss:       8
+Major Page Faults:        0
+Minor Page Faults:        891
+Max Resident Set Size:    860
+======== PID 21845 STATS (sleep) ========
+User CPU TIME:            0ms
+Sys CPU TIME:             0ms
+Wall Clock Time:          2ms
+Involuntary Preemptions:  4
+Voluntary CPU Loss:       10
+Major Page Faults:        0
+Minor Page Faults:        1062
+Max Resident Set Size:    860
+=>jobs
+No active jobs.
+=>exit
+Exit: doit shell will now terminate
+
+bash-3.2$ ./doit
+-->sleep 3 &
+[1] 26316
+-->exit
+Cannot exit while jobs are active.
+Run `jobs` to view active processes, or run any command to recheck for completion.
+-->jobs
+Active Jobs:
+[1] 26316 sleep
+-->sleep 0
+======== PID 26316 STATS (sleep) ========
+User CPU TIME:            0ms
+Sys CPU TIME:             0ms
+Wall Clock Time:          0ms
 Involuntary Preemptions:  0
 Voluntary CPU Loss:       2
 Major Page Faults:        0
 Minor Page Faults:        175
 Max Resident Set Size:    536
-bash-3.2$ doit      ./doit wc doit.c
- 133  425 4219 doit.c
-======== PROCESS STATS ========
+======== PID 7649 STATS (sleep) ========
 User CPU TIME:            0ms
 Sys CPU TIME:             0ms
 Wall Clock Time:          2ms
-Involuntary Preemptions:  2
+Involuntary Preemptions:  0
 Voluntary CPU Loss:       4
 Major Page Faults:        0
-Minor Page Faults:        180
-Max Resident Set Size:    552
-bash-3.2$ ./doit
--->wc doit.c
- 133  425 4219 doit.c
-======== PROCESS STATS ========
-User CPU TIME:            0ms
-Sys CPU TIME:             0ms
-Wall Clock Time:          1ms
-Involuntary Preemptions:  2
-Voluntary CPU Loss:       2
-Major Page Faults:        0
-Minor Page Faults:        181
-Max Resident Set Size:    556
--->sleep 3
-======== PROCESS STATS ========
-User CPU TIME:            0ms
-Sys CPU TIME:             0ms
-Wall Clock Time:          3001ms
-Involuntary Preemptions:  3
-Voluntary CPU Loss:       4
-Major Page Faults:        0
-Minor Page Faults:        356
-Max Resident Set Size:    556
--->set prompt  ^H= =)
-Execvp error
-======== PROCESS STATS ========
-User CPU TIME:            0ms
-Sys CPU TIME:             0ms
-Wall Clock Time:          8ms
-Involuntary Preemptions:  4
-Voluntary CPU Loss:       15
-Major Page Faults:        0
-Minor Page Faults:        403
-Max Resident Set Size:    556
--->set prompt = =)
-Execvp error
-======== PROCESS STATS ========
-User CPU TIME:            0ms
-Sys CPU TIME:             0ms
-Wall Clock Time:          0ms
-Involuntary Preemptions:  4
-Voluntary CPU Loss:       16
-Major Page Faults:        0
-Minor Page Faults:        450
-Max Resident Set Size:    556
-=)set prompt = customPrompt-->
-Execvp error
-======== PROCESS STATS ========
-User CPU TIME:            0ms
-Sys CPU TIME:             0ms
-Wall Clock Time:          0ms
-Involuntary Preemptions:  4
-Voluntary CPU Loss:       17
-Major Page Faults:        0
-Minor Page Faults:        497
-Max Resident Set Size:    556
-customPrompt-->cd
-Current dir: /isihome/mamatticoli/My_Documents/CS3013/HW1
-customPrompt-->cd ..
-Current dir: /isihome/mamatticoli/My_Documents/CS3013
-customPrompt-->cd
-Current dir: /isihome/mamatticoli/My_Documents/CS3013
-customPrompt-->ls
-HW1  README.md
-======== PROCESS STATS ========
-User CPU TIME:            0ms
-Sys CPU TIME:             1ms
-Wall Clock Time:          2ms
-Involuntary Preemptions:  6
-Voluntary CPU Loss:       20
-Major Page Faults:        0
-Minor Page Faults:        769
-Max Resident Set Size:    864
-customPrompt-->cd HW1
-Current dir: /isihome/mamatticoli/My_Documents/CS3013/HW1
-customPrompt-->ls
-a.out  doit  doit.c  typescript
-======== PROCESS STATS ========
-User CPU TIME:            0ms
-Sys CPU TIME:             2ms
-Wall Clock Time:          2ms
-Involuntary Preemptions:  8
-Voluntary CPU Loss:       22
-Major Page Faults:        0
-Minor Page Faults:        1040
-Max Resident Set Size:    864
-customPrompt-->exit
+Minor Page Faults:        347
+Max Resident Set Size:    536
+-->jobs
+No active jobs.
+-->exit
 Exit: doit shell will now terminate
-
-bash-3.2$ ./doit
--->No command entered
-EOF: doit shell will now terminate
 
 bash-3.2$ exit
 exit
 
-Script done on Fri 31 Aug 2018 09:36:57 AM EDT
+Script done on Fri 31 Aug 2018 11:48:39 AM EDT
