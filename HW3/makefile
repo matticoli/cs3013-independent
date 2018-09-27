@@ -1,8 +1,8 @@
 all:
-	gcc -o addev addev.c
+	gcc -o addem addem.c -lpthread -g
 
 clean:
-	rm ./addev
+	rm ./addem
 
 run:
-	./addev
+	./addem
