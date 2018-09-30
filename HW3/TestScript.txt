@@ -1,0 +1,154 @@
+Script started on Sun 30 Sep 2018 11:46:05 AM EDT
+bash-3.2$ make all
+gcc -g -c life.c -lpthread
+life.c: In function 'main':
+life.c:159: warning: cast to pointer from integer of different size
+gcc: -lpthread: linker input file unused because linking not done
+gcc -g -c twoD.c
+gcc -g life.o twoD.o -lpthread -o life
+gcc -g addem.c -lpthread -o addem
+addem.c: In function 'main':
+addem.c:63: warning: cast to pointer from integer of different size
+bash-3.2$ ./addem 1 10
+The total from 1 to 10 using 1 threads is 55
+bash-3.2$ ./addem 10 100
+The total from 1 to 100 using 10 threads is 5050
+bash-3.2$ ./addem 100 100
+Must have between 1 and 10 threads. Run addem without parameters for command syntax
+bash-3.2$ ./life
+============
+Game of Life
+============
+Usage:
+  ./life #threads #generations inputFile [print (y/n)] [pause (y/n)]
+bash-3.2$ ./life   0 0 null n n
+============
+Game of Life
+============
+Nothing to do - generations argument must be >= 0
+bash-3.2$ ./life 10    10 testCases/blinker.txt y n
+============
+Game of Life
+============
+Gen 1 (Start):
+000
+111
+000
+
+Gen 2:
+010
+010
+010
+
+Gen 3:
+000
+111
+000
+Reached oscilation state after 3 generations
+bash-3.2$ ./life 1 10 testCases/blinker.txt y n[1@0
+============
+Game of Life
+============
+More threads than input rows specified, using 3 threads instead
+Gen 1 (Start):
+000
+111
+000
+
+Gen 2:
+010
+010
+010
+
+Gen 3:
+000
+111
+000
+Reached oscilation state after 3 generations
+bash-3.2$ ./life 10 10 testCases/blinker.txt y n[1P[1P[1P[1P[1P[1P[1P[1@c[1@u[1@s[1@t[1@o[1@m[1@T[1@e[1@s[1@t[1@C[1@a[1@s[1@e.txt y n y0[1P[1P[1@5[1@0 testCases/customTestCase.txt y y
+============
+Game of Life
+============
+More threads than input rows specified, using 7 threads instead
+Gen 1 (Start):
+10000001
+01000010
+00100100
+00011000
+00100100
+01000010
+10000001
+
+Gen 2:
+00000000
+01000010
+00111100
+00111100
+00111100
+01000010
+00000000
+
+
+Gen 3:
+00000000
+00111100
+01000010
+01000010
+01000010
+00111100
+00000000
+
+
+Gen 4:
+00011000
+00111100
+01011010
+11100111
+01011010
+00111100
+00011000
+
+
+Gen 5:
+00100100
+00000000
+10000001
+10000001
+10000001
+00000000
+00100100
+
+
+Gen 6:
+00000000
+00000000
+00000000
+11000011
+00000000
+00000000
+00000000
+
+
+Gen 7:
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+
+
+Gen 8:
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+Reached steady state after 8 generations
+bash-3.2$ exit
+exit
+
+Script done on Sun 30 Sep 2018 11:48:15 AM EDT

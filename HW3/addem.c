@@ -28,7 +28,7 @@ sem_t *csems;
 Msg *mailboxes;
 
 void ploop(int numToSum, int numThreads);
-void cloop();
+void cloop(int index);
 void SendMessage(int iTo, Msg *msg);
 void RecvMessage(int iFrom, Msg *msg);
 
