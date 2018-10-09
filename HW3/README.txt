@@ -22,11 +22,11 @@ This program simulates Conway's game of life within a finite grid, distributing 
 From within the source directory, compile and run using the following commands:
   ```
   make all
-  ./life threads generations inputFile [print] [pause]
+  ./life threads inputFile generations [print] [pause]
   ```
 - _threads_: Number of worker threads to use
-- _generations_: Max number of generations to simulate
 - _inputFile_: Text file with starting configuration (1 for live, 0 for empty)
+- _generations_: Max number of generations to simulate
   - example:
     ```
     1011

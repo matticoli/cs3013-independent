@@ -1,4 +1,4 @@
-Script started on Sun 30 Sep 2018 11:46:05 AM EDT
+Script started on Mon 01 Oct 2018 12:43:30 AM EDT
 bash-3.2$ make all
 gcc -g -c life.c -lpthread
 life.c: In function 'main':
@@ -9,43 +9,27 @@ gcc -g life.o twoD.o -lpthread -o life
 gcc -g addem.c -lpthread -o addem
 addem.c: In function 'main':
 addem.c:63: warning: cast to pointer from integer of different size
-bash-3.2$ ./addem 1 10
-The total from 1 to 10 using 1 threads is 55
-bash-3.2$ ./addem 10 100
-The total from 1 to 100 using 10 threads is 5050
-bash-3.2$ ./addem 100 100
+bash-3.2$ ./addem
+Adds numbers 1 through numToSum using numThreads worker threads (max 10)
+Usage:
+addem <numThreads> <numToSum>
+bash-3.2$ .a /addem 0 0
 Must have between 1 and 10 threads. Run addem without parameters for command syntax
-bash-3.2$ ./life
+bash-3.2$ ./addem 1 10  50
+The total from 1 to 50 using 1 threads is 1275
+bash-3.2$ ./addem 10 50
+The total from 1 to 50 using 10 threads is 1275
+bash-3.2$ . ./addem 3 10
+The total from 1 to 10 using 3 threads is 55
+bash-3.2$ ./addem 3 1010    10 3
+The total from 1 to 3 using 10 threads is 6
+bash-3.2$ ./;ofe    life
 ============
 Game of Life
 ============
 Usage:
-  ./life #threads #generations inputFile [print (y/n)] [pause (y/n)]
-bash-3.2$ ./life   0 0 null n n
-============
-Game of Life
-============
-Nothing to do - generations argument must be >= 0
-bash-3.2$ ./life 10    10 testCases/blinker.txt y n
-============
-Game of Life
-============
-Gen 1 (Start):
-000
-111
-000
-
-Gen 2:
-010
-010
-010
-
-Gen 3:
-000
-111
-000
-Reached oscilation state after 3 generations
-bash-3.2$ ./life 1 10 testCases/blinker.txt y n[1@0
+  ./life #threads inputFile #generations [print (y/n)] [pause (y/n)]
+bash-3.2$ ./life 10 ./testCases/blinker.txt 10 y y   y n
 ============
 Game of Life
 ============
@@ -65,11 +49,31 @@ Gen 3:
 111
 000
 Reached oscilation state after 3 generations
-bash-3.2$ ./life 10 10 testCases/blinker.txt y n[1P[1P[1P[1P[1P[1P[1P[1@c[1@u[1@s[1@t[1@o[1@m[1@T[1@e[1@s[1@t[1@C[1@a[1@s[1@e.txt y n y0[1P[1P[1@5[1@0 testCases/customTestCase.txt y y
+bash-3.2$ ./life 10 ./testCases/blinker.txt 10 y n[1P[1P[1@2[1P[1@1 ./testCases/blinker.[1P[1@2[K./life 2 ./testCases/blinker.txt 10 y nt[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@/[1@c[1@i[1@s[1P[1P[1@u[1@s[15@tomTestCase.txt 10[1P[1P[1P[1P[1Pn[K3
 ============
 Game of Life
 ============
-More threads than input rows specified, using 7 threads instead
+Gen 1 (Start):
+10000001
+01000010
+00100100
+00011000
+00100100
+01000010
+10000001
+
+Gen 3:
+00000000
+00111100
+01000010
+01000010
+01000010
+00111100
+00000000
+bash-3.2$ ./life 2 ./testCases/customTestCase.txt 3 30 y
+============
+Game of Life
+============
 Gen 1 (Start):
 10000001
 01000010
@@ -88,7 +92,6 @@ Gen 2:
 01000010
 00000000
 
-
 Gen 3:
 00000000
 00111100
@@ -97,7 +100,6 @@ Gen 3:
 01000010
 00111100
 00000000
-
 
 Gen 4:
 00011000
@@ -108,7 +110,6 @@ Gen 4:
 00111100
 00011000
 
-
 Gen 5:
 00100100
 00000000
@@ -117,7 +118,6 @@ Gen 5:
 10000001
 00000000
 00100100
-
 
 Gen 6:
 00000000
@@ -128,7 +128,6 @@ Gen 6:
 00000000
 00000000
 
-
 Gen 7:
 00000000
 00000000
@@ -137,7 +136,6 @@ Gen 7:
 00000000
 00000000
 00000000
-
 
 Gen 8:
 00000000
@@ -151,4 +149,4 @@ Reached steady state after 8 generations
 bash-3.2$ exit
 exit
 
-Script done on Sun 30 Sep 2018 11:48:15 AM EDT
+Script done on Mon 01 Oct 2018 12:49:35 AM EDT

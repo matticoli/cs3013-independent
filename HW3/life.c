@@ -69,10 +69,10 @@ int main(int argc, char **argv) {
 	int doPause = 0; // 1 if user wants to pause after each generation, 0 if not
 
 	// See if there are the right number of arguments on the command line
-	if ((argc < 5) || (argc > 7)) {
+	if ((argc < 4) || (argc > 7)) {
 		// If not, tell the user what to enter.
 		printf("Usage:\n");
-		printf("  ./life #threads #generations inputFile [print (y/n)] [pause (y/n)]\n");
+		printf("  ./life #threads inputFile #generations [print (y/n)] [pause (y/n)]\n");
 		return EXIT_FAILURE;
 	}
 
@@ -89,8 +89,8 @@ int main(int argc, char **argv) {
 			doPrint = argv[4][0] == 'y';
 		default:
 			numThreads = atoi(argv[1]); // Convert from character string to integer.
-			gens = atoi(argv[2]);
-			inputFileName = argv[3];
+			gens = atoi(argv[3]);
+			inputFileName = argv[2];
 	}
 
 
@@ -444,6 +444,8 @@ char **loadStartGrid(FILE *input, char **dest, int *rows, int *columns) {
 			x += 1;
 			y = 0;
 			// Done with this iteration of the loop, start reading in next line of file
+			continue;
+		} else if(c == ' ') {
 			continue;
 		}
 		// If none of the above conditions are met, put the char in the array
