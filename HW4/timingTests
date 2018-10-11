@@ -1,0 +1,38 @@
+#!/bin/sh
+export PATH=$PATH:/home/mamatticoli/My_Documents/CS3013/HW1
+
+
+# Iterate through 3 files
+files=( makefile proj4.c beeMovieScript.txt hamlet.txt big.txt )
+for f in "${files[@]}"
+do
+    echo
+    echo
+    echo "|||| FILE: $f ||||"
+    echo
+    echo === Single-thread timing tests ===
+
+    # Test for all sizes
+    sizes=( 1 1024 4096 8192 )
+    for i in "${sizes[@]}"
+    do
+        echo --Chunk Size $i bytes--
+        doit ./proj4 $f bee $i | grep Wall #\|Major'
+        #echo 
+    done
+
+    echo mmap
+    doit ./proj4 $f bee mmap | grep Wall #\|Major'
+    echo 
+
+
+    echo === Multi-thread timing tests ===
+
+    # Test for all thread counts
+    for i in `seq 1 16`
+    do
+        echo --Thread Count $i--
+        doit ./proj4 $f bee p$i | grep Wall #\|Major'
+        #echo 
+    done
+done

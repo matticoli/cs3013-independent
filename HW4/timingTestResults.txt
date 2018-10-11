@@ -1,0 +1,245 @@
+
+
+|||| FILE: makefile ||||
+
+=== Single-thread timing tests ===
+--Chunk Size 1 bytes--
+Wall Clock Time:          3ms
+--Chunk Size 1024 bytes--
+Wall Clock Time:          1ms
+--Chunk Size 4096 bytes--
+Wall Clock Time:          2ms
+--Chunk Size 8192 bytes--
+Wall Clock Time:          1ms
+mmap
+Wall Clock Time:          1ms
+
+=== Multi-thread timing tests ===
+--Thread Count 1--
+Wall Clock Time:          1ms
+--Thread Count 2--
+Wall Clock Time:          1ms
+--Thread Count 3--
+Wall Clock Time:          2ms
+--Thread Count 4--
+Wall Clock Time:          1ms
+--Thread Count 5--
+Wall Clock Time:          2ms
+--Thread Count 6--
+Wall Clock Time:          1ms
+--Thread Count 7--
+Wall Clock Time:          1ms
+--Thread Count 8--
+Wall Clock Time:          1ms
+--Thread Count 9--
+Wall Clock Time:          2ms
+--Thread Count 10--
+Wall Clock Time:          1ms
+--Thread Count 11--
+Wall Clock Time:          1ms
+--Thread Count 12--
+Wall Clock Time:          2ms
+--Thread Count 13--
+Wall Clock Time:          1ms
+--Thread Count 14--
+Wall Clock Time:          2ms
+--Thread Count 15--
+Wall Clock Time:          2ms
+--Thread Count 16--
+Wall Clock Time:          2ms
+
+
+|||| FILE: proj4.c ||||
+
+=== Single-thread timing tests ===
+--Chunk Size 1 bytes--
+Wall Clock Time:          19ms
+--Chunk Size 1024 bytes--
+Wall Clock Time:          1ms
+--Chunk Size 4096 bytes--
+Wall Clock Time:          1ms
+--Chunk Size 8192 bytes--
+Wall Clock Time:          1ms
+mmap
+Wall Clock Time:          2ms
+
+=== Multi-thread timing tests ===
+--Thread Count 1--
+Wall Clock Time:          2ms
+--Thread Count 2--
+Wall Clock Time:          2ms
+--Thread Count 3--
+Wall Clock Time:          1ms
+--Thread Count 4--
+Wall Clock Time:          1ms
+--Thread Count 5--
+Wall Clock Time:          2ms
+--Thread Count 6--
+Wall Clock Time:          1ms
+--Thread Count 7--
+Wall Clock Time:          2ms
+--Thread Count 8--
+Wall Clock Time:          1ms
+--Thread Count 9--
+Wall Clock Time:          1ms
+--Thread Count 10--
+Wall Clock Time:          2ms
+--Thread Count 11--
+Wall Clock Time:          1ms
+--Thread Count 12--
+Wall Clock Time:          2ms
+--Thread Count 13--
+Wall Clock Time:          2ms
+--Thread Count 14--
+Wall Clock Time:          1ms
+--Thread Count 15--
+Wall Clock Time:          3ms
+--Thread Count 16--
+Wall Clock Time:          1ms
+
+
+|||| FILE: beeMovieScript.txt ||||
+
+=== Single-thread timing tests ===
+--Chunk Size 1 bytes--
+Wall Clock Time:          118ms
+--Chunk Size 1024 bytes--
+Wall Clock Time:          1ms
+--Chunk Size 4096 bytes--
+Wall Clock Time:          2ms
+--Chunk Size 8192 bytes--
+Wall Clock Time:          1ms
+mmap
+Wall Clock Time:          2ms
+
+=== Multi-thread timing tests ===
+--Thread Count 1--
+Wall Clock Time:          2ms
+--Thread Count 2--
+Wall Clock Time:          2ms
+--Thread Count 3--
+Wall Clock Time:          2ms
+--Thread Count 4--
+Wall Clock Time:          1ms
+--Thread Count 5--
+Wall Clock Time:          1ms
+--Thread Count 6--
+Wall Clock Time:          2ms
+--Thread Count 7--
+Wall Clock Time:          1ms
+--Thread Count 8--
+Wall Clock Time:          1ms
+--Thread Count 9--
+Wall Clock Time:          2ms
+--Thread Count 10--
+Wall Clock Time:          2ms
+--Thread Count 11--
+Wall Clock Time:          2ms
+--Thread Count 12--
+Wall Clock Time:          2ms
+--Thread Count 13--
+Wall Clock Time:          2ms
+--Thread Count 14--
+Wall Clock Time:          2ms
+--Thread Count 15--
+Wall Clock Time:          1ms
+--Thread Count 16--
+Wall Clock Time:          2ms
+
+
+|||| FILE: hamlet.txt ||||
+
+=== Single-thread timing tests ===
+--Chunk Size 1 bytes--
+Wall Clock Time:          362ms
+--Chunk Size 1024 bytes--
+Wall Clock Time:          2ms
+--Chunk Size 4096 bytes--
+Wall Clock Time:          2ms
+--Chunk Size 8192 bytes--
+Wall Clock Time:          2ms
+mmap
+Wall Clock Time:          2ms
+
+=== Multi-thread timing tests ===
+--Thread Count 1--
+Wall Clock Time:          2ms
+--Thread Count 2--
+Wall Clock Time:          2ms
+--Thread Count 3--
+Wall Clock Time:          2ms
+--Thread Count 4--
+Wall Clock Time:          2ms
+--Thread Count 5--
+Wall Clock Time:          2ms
+--Thread Count 6--
+Wall Clock Time:          2ms
+--Thread Count 7--
+Wall Clock Time:          2ms
+--Thread Count 8--
+Wall Clock Time:          2ms
+--Thread Count 9--
+Wall Clock Time:          3ms
+--Thread Count 10--
+Wall Clock Time:          3ms
+--Thread Count 11--
+Wall Clock Time:          4ms
+--Thread Count 12--
+Wall Clock Time:          4ms
+--Thread Count 13--
+Wall Clock Time:          2ms
+--Thread Count 14--
+Wall Clock Time:          2ms
+--Thread Count 15--
+Wall Clock Time:          2ms
+--Thread Count 16--
+Wall Clock Time:          2ms
+
+
+|||| FILE: big.txt ||||
+
+=== Single-thread timing tests ===
+--Chunk Size 1 bytes--
+Wall Clock Time:          12196ms
+--Chunk Size 1024 bytes--
+Wall Clock Time:          36ms
+--Chunk Size 4096 bytes--
+Wall Clock Time:          28ms
+--Chunk Size 8192 bytes--
+Wall Clock Time:          26ms
+mmap
+Wall Clock Time:          23ms
+
+=== Multi-thread timing tests ===
+--Thread Count 1--
+Wall Clock Time:          23ms
+--Thread Count 2--
+Wall Clock Time:          14ms
+--Thread Count 3--
+Wall Clock Time:          17ms
+--Thread Count 4--
+Wall Clock Time:          13ms
+--Thread Count 5--
+Wall Clock Time:          14ms
+--Thread Count 6--
+Wall Clock Time:          14ms
+--Thread Count 7--
+Wall Clock Time:          15ms
+--Thread Count 8--
+Wall Clock Time:          13ms
+--Thread Count 9--
+Wall Clock Time:          14ms
+--Thread Count 10--
+Wall Clock Time:          13ms
+--Thread Count 11--
+Wall Clock Time:          14ms
+--Thread Count 12--
+Wall Clock Time:          13ms
+--Thread Count 13--
+Wall Clock Time:          14ms
+--Thread Count 14--
+Wall Clock Time:          15ms
+--Thread Count 15--
+Wall Clock Time:          14ms
+--Thread Count 16--
+Wall Clock Time:          15ms
